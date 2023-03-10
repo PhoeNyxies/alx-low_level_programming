@@ -12,7 +12,7 @@ int factorial(int n)
 	{
 		return (1);
 	}
-        else if (n < 0)
+	else if (n < 0)
 	{
 		return (-1);
 	}
@@ -21,4 +21,5 @@ int factorial(int n)
 		x = n * factorial(n - 1);
 	}
 			return (x);
+
 }
