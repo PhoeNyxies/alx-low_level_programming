@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * main - multiplies two numbers.
+ * main - adds positive numbers.
  * @argc: argument count
  * @argv: arguments
  *
@@ -10,17 +10,29 @@
  */
 int main(int argc, char **argv)
 {
-	int x, y;
+	int i, n, sum = 0;
+	char *flag;
 
-	if (argc < 3)
+	if (argc < 2)
 	{
-		printf("Error\n");
-		return (1);
+		printf("0\n");
+		return (0);
 	}
 
-	x = atoi(argv[1]);
-	y = atoi(argv[2]);
-	printf("%d\n", x * y);
+	for (i = 1; argv[i]; i++)
+	{
+		n = strtol(argv[i], &flag, 10);
+		if (*flag)
+		{
+			printf("Error\n");
+			return (1);
+		}
+		else
+		{
+			sum += n;
+		}
+	}
+	printf("%d\n", sum);
 
 	return (0);
 }
